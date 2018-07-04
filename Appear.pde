@@ -4,6 +4,7 @@ class Appear {
   int second_count = 0;
   int enemy_count = 0;
   Enemy enemys[] = new Enemy[10];
+  String movement[] = {"Move", "Move", "Move", "Move", "Move", "Move", "Move", "Move", "Move", "Move"};
   
   Appear (int x, int y) {
     this.x = x;
@@ -17,7 +18,7 @@ class Appear {
   }
   
   void MyselfSet () {
-    noStroke();
+    
   }
   
   void EnemySet () {
@@ -30,7 +31,8 @@ class Appear {
     } else {
       enemy_c = color (0, 0, 255);
     }
-      enemys[i] = new Enemy(this.x, this.y, 40, enemy_c);
+    println(movement[i] + i);
+    enemys[i] = new Enemy(this.x, this.y, 40, enemy_c, movement[i]);
     }
   }
   
