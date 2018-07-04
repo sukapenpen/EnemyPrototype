@@ -30,11 +30,12 @@ class Appear {
     } else {
       enemy_c = color (0, 0, 255);
     }
-      enemys[i] = new Enemy(this.x, this.y, 10, enemy_c);
+      enemys[i] = new Enemy(this.x, this.y, 40, enemy_c);
     }
   }
   
   void Draw () {
+    noStroke();
     fill (appear_c);
     ellipse(x, y, 20, 20);
   }

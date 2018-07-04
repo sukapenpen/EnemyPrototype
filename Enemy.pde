@@ -12,6 +12,7 @@ class Enemy {
   }
   
   void Draw () {
+    noStroke();
     if (show == true) {
       fill(c);
       ellipse(x, y, size, size);
