@@ -18,15 +18,15 @@ void setup() {
   textFont(myFont);
   frame = new Field();
   machine = new Appear(width / 2, 0);
-  machine.Set ();
+  machine.appearSet ();
 }
 
 
 void draw () {
   background(255);
-  frame.Stage();
-  machine.Draw();
-  machine.EnemyDraw ();
+  frame.stage();
+  machine.draw();
+  machine.enemyDraw ();
 }
 
 
