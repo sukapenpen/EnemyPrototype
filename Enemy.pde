@@ -13,19 +13,19 @@ class Enemy {
     this.str = str;
   }
   
-  void Draw () {
+  void draw () {
     noStroke();
     if (show == true) {
       fill(c);
       ellipse(x, y, size, size);
       switch (this.str) {
-        case "Move":
-          Move();
+        case "move":
+          move();
       }
     }
   }
   
-  void Move () {
+  void move () {
     this.y ++;
   }
 }

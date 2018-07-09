@@ -4,7 +4,7 @@ class Appear {
   int second_count = 0;
   int enemy_count = 0;
   Enemy enemys[] = new Enemy[10];
-  String movement[] = {"Move", "Move", "Move", "Move", "Move", "Move", "Move", "Move", "Move", "Move"};
+  String movement[] = {"move", "move", "move", "move", "move", "move", "move", "move", "move", "move"};
   
   Appear (int x, int y) {
     this.x = x;
@@ -12,16 +12,16 @@ class Appear {
     this.appear_c = color(255, 255, 255);
   }
   
-  void Set () {
-    MyselfSet();
-    EnemySet();
+  void appearSet () {
+    myselfSet();
+    enemySet();
   }
   
-  void MyselfSet () {
+  void myselfSet () {
     
   }
   
-  void EnemySet () {
+  void enemySet () {
     for (int i = 0; i < enemys.length; i ++) {
     color enemy_c;
     if (i % 3 == 0) {
@@ -31,21 +31,20 @@ class Appear {
     } else {
       enemy_c = color (0, 0, 255);
     }
-    println(movement[i] + i);
     enemys[i] = new Enemy(this.x, this.y, 40, enemy_c, movement[i]);
     }
   }
   
-  void Draw () {
+  void draw () {
     noStroke();
     fill (appear_c);
     ellipse(x, y, 20, 20);
   }
   
-  void EnemyDraw () {
+  void enemyDraw () {
     second_count ++;
     for (int i = 0; i < enemys.length; i ++) {
-      enemys[i].Draw();
+      enemys[i].draw();
     }
     if (second_count % 50 == 0 && enemy_count < enemys.length) {
       enemys[enemy_count].show = true;
