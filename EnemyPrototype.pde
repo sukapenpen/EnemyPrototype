@@ -29,8 +29,6 @@ void draw () {
   machine.enemyDraw ();
 }
 
-
-
 void mousePressed () {
   machine.appear_c = color(0, 0, 0);
 }

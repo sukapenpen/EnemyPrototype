@@ -5,7 +5,7 @@ class Appear {
   int enemy_count = 0;
   Enemy enemys[] = new Enemy[5];
   String movement[] = {"quadratic", "quadratic", "quadratic", "quadratic", "quadratic",
-                       "Move","Move", "Move", "Move", "Move"};
+                       "quadratic","quadratic", "quadratic", "quadratic", "quadratic"};
   
   Appear (int x, int y) {
     this.x = x;
@@ -32,7 +32,7 @@ class Appear {
     } else {
       enemy_c = color (0, 0, 255);
     }
-    enemys[i] = new Enemy(0, 0, 40, 1, enemy_c, movement[i]);
+    enemys[i] = new Enemy(150, 0, 40, 1, enemy_c, movement[i]);
     }
   }
   

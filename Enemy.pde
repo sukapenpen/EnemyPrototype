@@ -26,7 +26,7 @@ class Enemy {
           break;
         
         case "quadratic":
-          quadratic(0, 0, 400, 350);
+          quadratic(150, 0, 400, 350);
           break;
       }
     }
