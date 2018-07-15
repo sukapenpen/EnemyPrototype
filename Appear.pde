@@ -23,15 +23,16 @@ class Appear {
   
   void enemySet () {
     for (int i = 0; i < enemys.length; i ++) {
-    color enemy_c;
-    if (i % 3 == 0) {
-      enemy_c = color (255, 0 ,0);
-    } else if (i % 3 == 1) {
-      enemy_c = color (0, 255 ,0);
-    } else {
-      enemy_c = color (0, 0, 255);
-    }
-    enemys[i] = new Enemy(this.x, this.y, 40, enemy_c, movement[i]);
+      color enemy_c;
+      if (i % 3 == 0) {
+        enemy_c = color (255, 0 ,0);
+      } else if (i % 3 == 1) {
+        enemy_c = color (0, 255 ,0);
+      } else {
+        enemy_c = color (0, 0, 255);
+      }
+      enemys[i] = new Enemy(this.x, this.y, 40, enemy_c, movement[i]);
+      enemys[i].bulletSet();
     }
   }
   

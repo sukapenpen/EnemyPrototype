@@ -1,6 +1,7 @@
 PFont myFont;
 Field frame;
 Appear machine;
+Player player;
 
 public static final int f_width = 400, f_height = 500;
 
@@ -18,18 +19,17 @@ void setup() {
   textFont(myFont);
   frame = new Field();
   machine = new Appear(width / 2, 0);
+  player = new Player(10, width / 2, 550, 30, 5.0, color (0));
   machine.appearSet ();
 }
 
-
 void draw () {
   background(255);
-  frame.Stage();
+  frame.stage();
   machine.draw();
   machine.enemyDraw ();
+  player.draw();
 }
-
-
 
 void mousePressed () {
   machine.appear_c = color(0, 0, 0);
@@ -37,4 +37,22 @@ void mousePressed () {
 
 void mouseReleased () {
   machine.appear_c = color(255, 255, 255);
+}
+
+void keyPressed () {
+  if (keyCode == RIGHT) {
+    player.right = true;
+  }
+  if (keyCode == LEFT) {
+    player.left = true;
+  }
+}
+
+void keyReleased () {
+  if (keyCode == RIGHT) {
+    player.right = false;
+  }
+  if (keyCode == LEFT) {
+    player.left = false;
+  }
 }
