@@ -21,15 +21,12 @@ void setup() {
   machine.appearSet ();
 }
 
-
 void draw () {
   background(255);
   frame.stage();
   machine.draw();
   machine.enemyDraw ();
 }
-
-
 
 void mousePressed () {
   machine.appear_c = color(0, 0, 0);
