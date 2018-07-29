@@ -1,10 +1,15 @@
+import java.util.*;
+
 class Enemy {
   int hp;
   float x, y, size;
+  int time = 0;
+  int interval = 45;
   String str;
   color c;
   boolean show = false;
   float speed;
+  List<Bullet> bullet;
   
   Enemy (float x, float y, float size, float speed,  color c, String str) {
     this.x = x;
@@ -15,9 +20,17 @@ class Enemy {
     this.str = str;
   }
   
+  void bulletSet () {
+    bullet = new ArrayList<Bullet>();
+    for (int i = 0; i < 100; i ++) {
+      bullet.add(new Bullet(2.0, 1));
+    }
+  }
+  
   void draw () {
     noStroke();
-    if (show == true) {
+    if (show) {
+      time ++;
       fill(c);
       ellipse(x, y, size, size);
       switch (this.str) {
@@ -31,6 +44,15 @@ class Enemy {
         
         case "right_quadratic":
           right_quadratic(800, 0, 200, 350);
+          break;
+      }
+      shot();
+    } else {
+      time = 0;
+    }
+    for (int i = 0; i < bullet.size(); i++) {
+      if (bullet.get(i).show) {
+          bullet.get(i).draw();
       }
     }
   }
@@ -53,5 +75,16 @@ class Enemy {
     println(x + " " + y + "aは" + a);
     y += speed * 3;
     x = sq(y - max_y) / a + max_x;
+  }
+  
+  void shot () {
+    if (time % interval == 0) {
+      for (int i = 0; i < bullet.size(); i++) {
+        if (!bullet.get(i).show) {
+          bullet.get(i).display(x, y);
+          break;
+        }
+      }
+    }
   }
 }
